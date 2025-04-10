@@ -6,7 +6,7 @@ function dijkstra(graph, sourceNode) {
     let node = 0
     let distance = 0
     while(Vertices.length != 0){
-        Vertice = nextBest(Vertices,node,distances)
+        Vertice = nextVertice(Vertices,node,distances)
         if(Vertices.length != 0){
             Vertices.splice(node,1)
             for(i = 0; i < graph[Vertice].length; i++){
@@ -22,7 +22,7 @@ function dijkstra(graph, sourceNode) {
     }
     return distances
 }
-function nextBest(Vertices,node,distances){
+function nextVertice(Vertices,node,distances){
     let Vertice = 0;
     for(i=0; i < Vertices.length; i++){
         if(Vertices[i][1] < Vertices[Vertice][1]){
